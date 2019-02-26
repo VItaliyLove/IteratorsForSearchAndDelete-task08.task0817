@@ -1,5 +1,7 @@
 # iteratorsForSearchAnd-Delete
-Solution for JavaRush task
+Solution for JavaRush task №0817
+
+package com.javarush.task.task08.task0817;
 
 package com.javarush.task.task08.task0817;
 
