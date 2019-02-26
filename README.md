@@ -1,8 +1,3 @@
-# iteratorsForSearchAnd-Delete
-Solution for JavaRush task №0817
-
-package com.javarush.task.task08.task0817;
-
 package com.javarush.task.task08.task0817;
 
 import java.util.HashMap;
@@ -12,10 +7,8 @@ import java.util.Iterator;
 Нам повторы не нужны
 */
 
-public class Solution 
-{
-    public static HashMap<String, String> createMap() 
-    {
+public class Solution {
+    public static HashMap<String, String> createMap() {
         HashMap <String,String> list = new HashMap<String,String>();
         list.put("a","aa"); //1
         list.put("b","bb"); //2
@@ -30,45 +23,41 @@ public class Solution
         return list;
     }
 
-    public static void removeTheFirstNameDuplicates(Map<String, String> map) 
-    {
-    /* кусочек кода, где работают два итератора */
-        Iterator<HashMap.Entry<String,String>> first = map.entrySet().iterator(); // инициализируем первый итератор
-        while(first.hasNext()) // проход по мапе первым итератором
+    public static void removeTheFirstNameDuplicates(Map<String, String> map) {
+        Iterator<HashMap.Entry<String,String>> first = map.entrySet().iterator();
+        while(first.hasNext())
         {
-            boolean del = false; // индикация наличия операции удаления
-            String temp = first.next().getValue(); // забираем значение из первого итератора
-            Iterator<HashMap.Entry<String,String>> second = first; // инициализируем второй итератор первым
-            while(second.hasNext()) // проход по мапе вторым итератором
+            boolean del = false;
+            String temp = first.next().getValue();
+            Iterator<HashMap.Entry<String,String>> second = first;
+            while(second.hasNext())
             {
-                if(second.next().getValue()==temp) // если совпадение
+                if(second.next().getValue()==temp)
                 {
-                    second.remove(); // удалеем значение во втором итераторе
-                    del = true; // наличие операции удаления
+                    second.remove();
+                    del = true;
                 }
             }
-            if(del) // если была операция удаления
+            if(del)
             {
-                first = map.entrySet().iterator(); // РЕинициализируем первый итератор
-                first.next(); // делаем шаг вперёд
-                first.remove(); // удаляем значение в итераторе
+                first = map.entrySet().iterator();
+                first.next();
+                first.remove();
             }
         }
         removeItemFromMapByValue(map, "a");
     }
 
-    public static void removeItemFromMapByValue(Map<String, String> map, String value)
-    {
+    public static void removeItemFromMapByValue(Map<String, String> map, String value) {
         HashMap<String, String> copy = new HashMap<String, String>(map);
-        for (Map.Entry<String, String> pair : copy.entrySet()) 
-        {
+        for (Map.Entry<String, String> pair : copy.entrySet()) {
             if (pair.getValue().equals(value))
                 map.remove(pair.getKey());
         }
+
     }
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         HashMap myMap = createMap();
         removeTheFirstNameDuplicates(myMap);
     }
