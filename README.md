@@ -1,8 +1,13 @@
+#Solution for JavaRush task #0817;
+
 package com.javarush.task.task08.task0817;
 
 import java.util.HashMap;
+
 import java.util.Map;
+
 import java.util.Iterator;
+
 /* 
 Нам повторы не нужны
 */
