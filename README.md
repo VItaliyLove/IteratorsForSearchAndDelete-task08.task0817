@@ -7,9 +7,12 @@ import java.util.Iterator;
 Нам повторы не нужны
 */
 
+
+
 public class Solution {
+
     public static HashMap<String, String> createMap() {
-        HashMap <String,String> list = new HashMap<String,String>();
+        HashMap <String,String> list = new HashMap<String,String>()
         list.put("a","aa"); //1
         list.put("b","bb"); //2
         list.put("c","cc"); //3
