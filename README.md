@@ -40,7 +40,7 @@ public class Solution {
             Iterator<HashMap.Entry<String,String>> second = first;
             while(second.hasNext())
             {
-                if(second.next().getValue()==temp)
+                if(second.next().getValue().equals(temp))
                 {
                     second.remove();
                     del = true;
