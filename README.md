@@ -32,25 +32,25 @@ public class Solution {
     }
 
     public static void removeTheFirstNameDuplicates(Map<String, String> map) {
-        Iterator<HashMap.Entry<String,String>> first = map.entrySet().iterator();
-        while(first.hasNext())
+        Iterator<HashMap.Entry<String,String>> first = map.entrySet().iterator(); // инициализируем первый итератор
+        while(first.hasNext()) // цикл первого итератора
         {
-            boolean del = false;
-            String temp = first.next().getValue();
-            Iterator<HashMap.Entry<String,String>> second = first;
-            while(second.hasNext())
+            boolean del = false; // индикация наличия операции удаления
+            String temp = first.next().getValue(); // сохраняем значение первого итератора в переменную
+            Iterator<HashMap.Entry<String,String>> second = first; // инициализируем второй итератор
+            while(second.hasNext()) // цикл второго итератора
             {
-                if(second.next().getValue().equals(temp))
+                if(second.next().getValue().equals(temp)) // если совпадение
                 {
                     second.remove();
-                    del = true;
+                    del = true; // наличие операции удаления
                 }
             }
-            if(del)
+            if(del) // если была операция удаления
             {
-                first = map.entrySet().iterator();
-                first.next();
-                first.remove();
+                first = map.entrySet().iterator(); //реинициализируем первый итератор
+                first.next(); // шаг вперёд
+                first.remove(); // удаляем первый итератор (он же был в совпадениях)
             }
         }
         removeItemFromMapByValue(map, "a");
