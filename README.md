@@ -9,7 +9,9 @@ import java.util.Iterator;
 Нам повторы не нужны
 */
 
+
 public class Solution {
+
     public static HashMap<String, String> createMap() {
         HashMap <String,String> list = new HashMap<String,String>();
         list.put("Stark",     "Sansa");
